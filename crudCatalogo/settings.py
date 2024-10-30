@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mfdijw!30+mhg*3n=8dv7a!_b@=l%k*5%6!k((sf8jvv0*o2-m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,9 +75,13 @@ WSGI_APPLICATION = 'crudCatalogo.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+            'ENGINE' : 'django.db.backends.postgresql',
+            'NAME': 'catalogodb',
+            'USER': 'postgres',
+            'PASSWORD': 'josefina18',
+            'HOST': 'localhost',
+            'PORT': '5432',
     }
 }
 
@@ -104,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
