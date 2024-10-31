@@ -25,3 +25,7 @@ def create_producto(request):
         'form': form
     }
     return render(request, 'dashboard/createProducto.html', context)
+
+def delete_producto(request, pk):
+    Producto.objects.get(id=pk).delete()
+    return redirect('dashboard:index')
