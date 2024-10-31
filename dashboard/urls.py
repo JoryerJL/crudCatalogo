@@ -8,4 +8,6 @@ urlpatterns = [
     path('', index_dashboard, name='index'),
     path('create/', create_producto, name='create'),
     path('delete/<int:pk>/', delete_producto, name='delete'),
+    path('update/<int:pk>/', update_product, name='update'),
+    path('detail/<int:pk>/', detail_product, name='detail'),
 ]

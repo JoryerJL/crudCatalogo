@@ -28,8 +28,8 @@
                                 <td>{{ producto.nombre }}</td>
                                 <td>{{ producto.precio }}</td>
                                 <td><img class="img-thumbnail" src="{{ producto.imagen.url }}"></td>
-                                <td><a class="btn btn-success" href="#" role="button">Editar</a></td>
-                                <td><a class="btn btn-primary" href="#" role="button">Detalles</a></td>
+                                <td><a class="btn btn-success" href="{% url 'dashboard:update' producto.pk %}" role="button">Editar</a></td>
+                                <td><a class="btn btn-primary" href="{% url 'dashboard:detail' producto.pk %}" role="button">Detalles</a></td>
                                 <td><a class="btn btn-danger" href="{% url 'dashboard:delete' producto.pk %}" role="button">Borrar</a></td>
                             </tr>
                         {% endfor %}

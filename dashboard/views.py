@@ -29,3 +29,27 @@ def create_producto(request):
 def delete_producto(request, pk):
     Producto.objects.get(id=pk).delete()
     return redirect('dashboard:index')
+
+def update_product(request, pk):
+    producto = Producto.objects.get(id=pk)
+    form = ProductoCreateForm(instance=producto)
+    if request.method == 'POST':
+        form = ProductoCreateForm(request.POST, request.FILES, instance=producto)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard:index')
+        else:
+            print(form.errors)
+    context = {
+        'title': 'Actualizar Producto',
+        'form': form
+    }
+    return render(request, 'dashboard/createProducto.html', context)
+
+def detail_product(request, pk):
+    producto = Producto.objects.get(id=pk)
+    context = {
+        'title': 'Detalle del Producto',
+        'producto': producto
+    }
+    return render(request, 'dashboard/detailProducto.html', context)
