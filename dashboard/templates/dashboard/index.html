@@ -3,9 +3,11 @@
     <div class="container" id="dashboard-titulo">
         <div class="row">
             <div class="col">
-                <h1>Dashboard Administrativo</h1>
+                {% block title %}
+                    <h1>Dashboard Administrativo</h1>
+                {% endblock %}
                 <a class="btn btn-outline-warning" href="{% url 'website:index' %}" role="button">Website</a>
-                <a class="btn btn-outline-primary" href="#" role="button">Nuevo Producto</a>
+                <a class="btn btn-outline-primary" href="{% url 'dashboard:create' %}" role="button">Nuevo Producto</a>
                 <div class="table-dashboard">
                     <table class="table table-hover">
                         <thead>
@@ -26,8 +28,9 @@
                                 <td>{{ producto.nombre }}</td>
                                 <td>{{ producto.precio }}</td>
                                 <td><img class="img-thumbnail" src="{{ producto.imagen.url }}"></td>
-                                <td></td>
-                                <td></td>
+                                <td><a class="btn btn-success" href="#" role="button">Editar</a></td>
+                                <td><a class="btn btn-primary" href="#" role="button">Detalles</a></td>
+                                <td><a class="btn btn-danger" href="#" role="button">Borrar</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>
