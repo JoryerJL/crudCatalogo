@@ -24,7 +24,7 @@
                         <tbody>
                         {% for producto in productos %}
                             <tr>
-                                <th scope="row">{{ producto.id }}</th>
+                                <th scope="row">{{ forloop.counter }}</th>
                                 <td>{{ producto.nombre }}</td>
                                 <td>{{ producto.precio }}</td>
                                 <td><img class="img-thumbnail" src="{{ producto.imagen.url }}"></td>

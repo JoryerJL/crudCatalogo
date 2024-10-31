@@ -14,10 +14,10 @@ def index_dashboard(request):
 def create_producto(request):
     form = ProductoCreateForm()
     if request.method == 'POST':
-        form = ProductoCreateForm(request.POST)
+        form = ProductoCreateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect(index_dashboard)
+            return redirect('dashboard:index')
         else:
             print(form.errors)
     context = {
