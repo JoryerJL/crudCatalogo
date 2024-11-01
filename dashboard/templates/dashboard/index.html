@@ -6,8 +6,8 @@
                 {% block title %}
                     <h1>Dashboard Administrativo</h1>
                 {% endblock %}
-                <a class="btn btn-outline-warning" href="{% url 'website:index' %}" role="button">Website</a>
-                <a class="btn btn-outline-primary" href="{% url 'dashboard:create' %}" role="button">Nuevo Producto</a>
+                <a class="btn btn-outline-warning" href="{% url 'website:index' %}" role="button"><i class="fa-solid fa-house"></i></a>
+                <a class="btn btn-outline-primary" href="{% url 'dashboard:create' %}" role="button"><i class="fa-solid fa-plus"></i> Nuevo Producto</a>
                 <div class="table-dashboard">
                     <table class="table table-hover">
                         <thead>
@@ -28,9 +28,9 @@
                                 <td>{{ producto.nombre }}</td>
                                 <td>{{ producto.precio }}</td>
                                 <td><img class="img-thumbnail" src="{{ producto.imagen.url }}"></td>
-                                <td><a class="btn btn-success" href="{% url 'dashboard:update' producto.pk %}" role="button">Editar</a></td>
-                                <td><a class="btn btn-primary" href="{% url 'dashboard:detail' producto.pk %}" role="button">Detalles</a></td>
-                                <td><a class="btn btn-danger" href="{% url 'dashboard:delete' producto.pk %}" role="button">Borrar</a></td>
+                                <td><a class="btn btn-success" href="{% url 'dashboard:update' producto.pk %}" role="button"><i class="fa-solid fa-pen"></i> Editar</a></td>
+                                <td><a class="btn btn-primary" href="{% url 'dashboard:detail' producto.pk %}" role="button"><i class="fa-solid fa-circle-info"></i> Detalles</a></td>
+                                <td><a class="btn btn-danger" href="{% url 'dashboard:delete' producto.pk %}" role="button"><i class="fa-solid fa-trash"></i> Borrar</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

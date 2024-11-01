@@ -1,19 +1,22 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         {{ title }}
     </title>
     <link rel="stylesheet" href="{% static 'bs522/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'baseDashboard/style.css' %}">  
-  </head>
-  <body>
-    {% block main %}
+    <link rel="stylesheet" href="{% static 'baseDashboard/style.css' %}">
+    <link rel="stylesheet" href="{% static 'baseDashboard/styleDetail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fa_all.min.css' %}">
+</head>
+<body>
+{% block main %}
 
-    {% endblock %}
-    <script src="{% static 'bs522/js/bootstrap.bundle.min.js' %}"></script>
-  </body>
+{% endblock %}
+<script src="{% static 'bs522/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/fa_all.min.js' %}"></script>
+</body>
 </html>

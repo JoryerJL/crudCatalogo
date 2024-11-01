@@ -20,7 +20,7 @@
                             <span class="text-primary float-end">${{ producto.precio }}</span>
                             <h5 class="card-title">{{ producto.nombre }}</h5>
                             <p class="card-text">{{ producto.detalle }}</p>
-                            <a href="#" class="btn btn-primary">Detalles</a>
+                            <a href="{% url 'website:detalle' producto.pk %}" class="btn btn-primary">Detalles</a>
                         </div>
                     </div>
                 </div>

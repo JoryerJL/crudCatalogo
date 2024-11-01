@@ -1,12 +1,10 @@
-{% extends 'baseDashboard.html' %}
-{% block main %}
+{% extends 'base.html' %}
+{% block content %}
     <div class="container">
         <div class="row">
             <div class="col">
                 <h1>Detalle del Producto</h1>
-                <a class="btn btn-outline-warning" href="{% url 'website:index' %}" role="button"><i
-                        class="fa-solid fa-house"></i></a>
-                <a class="btn btn-outline-primary" href="{% url 'dashboard:index' %}" role="button"><i
+                <a class="btn btn-outline-primary" href="{% url 'website:index' %}" role="button"><i
                         class="fa-solid fa-circle-left"></i> Regresar</a>
                 <div class="container" id="contenedor">
                     <div class="container text-center">
@@ -32,7 +30,7 @@
                     </div>
                 </div>
                 <div class="botones-finales">
-                    <a class="btn btn-outline-success" href="#"> <i class="fa-brands fa-square-whatsapp"></i> Ordenar </a>
+                    <a class="btn btn-outline-success" href="#"> <i class="fa-solid fa-plus"></i> Ordenar </a>
                 </div>
             </div>
         </div>
