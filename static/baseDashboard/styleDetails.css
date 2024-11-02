@@ -15,5 +15,21 @@
 .botones-finales {
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
+}
+
+.galeria {
     margin-top: 30px;
 }
+
+.carrusel {
+    margin-top: 30px;
+}
+
+.imagenes img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
