@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'basePrincipal.html' %}
 
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>¡Bienvenido al restaurante!</h1>
+                <h1>¡ {{ request.user }} bienvenido al restaurante!</h1>
                 <p>Te presentamos los nuevos lanzamientos --></p>
             </div>
         </div>

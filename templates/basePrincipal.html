@@ -29,10 +29,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Mis Ordenes</a>
                 </li>
+            </ul>
+        </div>
+        {% if user.is_authenticated %}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        Categorias
+                        <i class="fa-solid fa-user"></i> Mi perfil
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -44,11 +48,12 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+            <a href="{% url 'registration:logout' %}" class="btn btn-outline-danger"><i
+                    class="fa-solid fa-right-to-bracket"></i> Cerrar Sesión </a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-outline-success"><i class="fa-solid fa-right-to-bracket"></i>
+                Iniciar Sesión </a>
+        {% endif %}
     </div>
 </nav>
 {% block content %}
